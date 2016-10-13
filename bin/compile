@@ -163,6 +163,21 @@ if [ "$SALESFORCE_BUILDPACK_DEBUG" == "true" ]; then
 fi
 
 
+###   P R O C F I L E
+# if no Procfile, write Procfile having default behavior: deploy in release phase, redirect to SALESFORCE_URL in web phase
+if [ ! -f $BUILD_DIR/Procfile ]; then
+    cat <<EOF >$BUILD_DIR/Procfile
+# Release script will deploy source to SALESFORCE_URL org.
+release: .salesforce/node/bin/node .salesforce/force.js release
+
+# Redirect from Heroku app domain to Salesforce org.  Script dependencies installed via Salesforce Buildpack.
+web: .salesforce/node/bin/node .salesforce/force.js redirect
+
+EOF
+    status "Generated Procfile that will deploy source in release phase and redirect to SALESFORCE_URL in web phase"
+fi
+
+
 ###   F I N A L   N O T E S
 highlight "    "
 highlight "### N O T E ###"
