@@ -1,7 +1,7 @@
 {
     "name": "salesforce-buildpack",
     "version": "1.0.0",
-    "description": "Buildpack for Force.com source",
+    "description": "Buildpack for Salsforce DX Force.com source",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/heroku/salesforce-buildpack.git"
