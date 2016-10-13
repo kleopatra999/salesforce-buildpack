@@ -56,7 +56,7 @@ mkdir -p "$BUILD_DIR/$VENDORED_HEROKU_CLI"
 cd "$BUILD_DIR/$VENDORED_HEROKU_CLI"
 
 : ${HEROKU_CLI_VERSION:="5.4.3-a5b1cb1"}
-HEROKU_CLI_URL="https://cli-assets.heroku.com/branches/stable/$HEROKU_CLI_VERSION/heroku-v$HEROKU_CLI_VERSION-linux-amd64.tar.xz"}
+HEROKU_CLI_URL="https://cli-assets.heroku.com/branches/stable/$HEROKU_CLI_VERSION/heroku-v$HEROKU_CLI_VERSION-linux-amd64.tar.xz"
 if [ "$SALESFORCE_BUILDPACK_DEBUG" == "true" ]; then
     debug "HEROKU_CLI_URL=$HEROKU_CLI_URL"
 fi
